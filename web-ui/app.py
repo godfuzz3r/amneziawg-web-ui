@@ -1090,7 +1090,12 @@ amnezia_manager = AmneziaManager()
 @app.route('/')
 def index():
     print("Serving index.html")
-    return render_template('index.html')
+    return render_template('index.html',
+        default_mtu=DEFAULT_MTU,
+        default_subnet=DEFAULT_SUBNET,
+        default_port=DEFAULT_PORT,
+        default_dns=DEFAULT_DNS,
+    )
 
 # Explicit static file route to ensure they're served
 @app.route('/static/<path:filename>')

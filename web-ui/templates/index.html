@@ -54,7 +54,7 @@
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-700">Port *</label>
-                            <input type="number" id="serverPort" value="51820" class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2" required>
+                            <input type="number" id="serverPort" value="{{ default_port }}" class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2" required>
                             <p id="portError" class="text-red-500 text-xs mt-1 hidden">Port is required</p>
                         </div>
                     </div>
@@ -62,13 +62,13 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                             <label class="block text-sm font-medium text-gray-700">Subnet *</label>
-                            <input type="text" id="serverSubnet" value="10.0.0.0/24" class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2"
+                            <input type="text" id="serverSubnet" value="{{ default_subnet }}" class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2"
                                    placeholder="e.g., 10.0.0.0/24" required>
                             <p id="subnetError" class="text-red-500 text-xs mt-1 hidden">Valid subnet is required (e.g., 10.0.0.0/24)</p>
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-700">MTU (1280-1440) *</label>
-                            <input type="number" id="serverMTU" value="1420" min="1280" max="1440"
+                            <input type="number" id="serverMTU" value="{{ default_mtu }}" min="1280" max="1440"
                                 class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2" required>
                             <p id="mtuError" class="text-red-500 text-xs mt-1 hidden">MTU must be between 1280 and 1440</p>
                             <p class="text-gray-500 text-xs mt-1">Recommended: 1280 for basic internet, 1420-1440 for better performance</p>
@@ -78,7 +78,7 @@
                     <div class="grid grid-cols-1 gap-4">
                         <div>
                             <label class="block text-sm font-medium text-gray-700">DNS Servers *</label>
-                            <input type="text" id="serverDNS" value="8.8.8.8,1.1.1.1"
+                            <input type="text" id="serverDNS" value="{{ default_dns }}"
                                 class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2"
                                 placeholder="8.8.8.8,1.1.1.1" required>
                             <p id="dnsError" class="text-red-500 text-xs mt-1 hidden">Valid DNS servers required (comma-separated IPs)</p>
